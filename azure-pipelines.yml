@@ -8,22 +8,15 @@ trigger:
 
 strategy:
   matrix:
-    linux:
-      imageName: 'ubuntu-latest'
-    mac:
-      imageName: 'macOS-latest'
-    windows:
-      imageName: 'windows-latest'
     Python311:
       python.version: '3.11'
     Python312:
       python.version: '3.12'
     Python3131:
       python.version: '3.13.1'
-  maxParallel: 6
 
 pool:
-  vmImage: $(imageName)
+  vmImage: ubuntu-latest
 
 steps:
   - task: UsePythonVersion@0
